@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-19 02:46:53 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMi0xOTswMjoyMToyOSBQTTszMTkz"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMi0xOTswMjo0Njo1MyBQTTs1OzMzMDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principle" type="Real" array="False" size=""/>
+            <input variable="principle"/>
+            <declare name="ytm" type="Real" array="False" size=""/>
+            <input variable="ytm"/>
+            <declare name="ir" type="Real" array="False" size=""/>
+            <declare name="fyi" type="Real" array="False" size=""/>
+            <assign variable="fyi" expression="principle * ir"/>
+            <if expression="principle &gt; 100000 And ytm = 5">
+                <then>
+                    <assign variable="ir" expression="(6/100)"/>
+                </then>
+                <else>
+                    <if expression="principle &gt;=50000 And ytm = 10">
+                        <then>
+                            <assign variable="ir" expression="(5/100)"/>
+                        </then>
+                        <else>
+                            <if expression="principle &gt;= 50000 And ytm = 5">
+                                <then>
+                                    <assign variable="ir" expression="(4/100)"/>
+                                </then>
+                                <else>
+                                    <assign variable="ir" expression="(2/100)"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ABRAHAM.CISNEROS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-21 05:27:24 PM"/>
+        <attribute name="created" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMi0yMTswNDo1MToyNSBQTTszMTg3"/>
+        <attribute name="edited" value="QUJSQUhBTS5DSVNORVJPUztOVVNaMjg4Mjk1Mjg7MjAyMS0wMi0yMTswNToyNzoyNCBQTTszOzMzMDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="partN" type="Integer" array="False" size=""/>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <declare name="up" type="Real" array="False" size=""/>
+            <input variable="partN"/>
+            <input variable="qty"/>
+            <if expression="partN = 10 or partN = 55">
+                <then>
+                    <assign variable="up" expression="1.00"/>
+                </then>
+                <else>
+                    <if expression="partN = 99">
+                        <then>
+                            <assign variable="up" expression="2.00"/>
+                        </then>
+                        <else>
+                            <if expression="partN = 80 or partN = 70">
+                                <then>
+                                    <assign variable="up" expression="3.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="up" expression="5.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="up * qty"/>
+            <output expression="partN" newline="True"/>
+            <output expression="qty" newline="True"/>
+            <output expression="up" newline="True"/>
+            <output expression="total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
